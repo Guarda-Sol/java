@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Leave a Comment</title>
+</head>
+<body>
+    <form action="/addComentario" method="post">
+        <label for="comment">Comment:</label><br>
+        <textarea id="comment" name="comment" rows="4" cols="50"></textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Comments:</h2>
+    <ul>
+        <li th:each="comment : ${comments}" th:text="${comment.texto}"></li>
+    </ul>
+</body>
+</html>
